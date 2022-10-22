@@ -1,10 +1,13 @@
 // Icons:
-import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
-import { BsFillCartFill } from "react-icons/bs";
+import { AiFillTag, AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
+import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
+import { FaUserFriends, FaWallet } from "react-icons/fa";
+import { MdFavorite, MdHelp } from "react-icons/md";
+import { TbTruckDelivery } from "react-icons/tb";
 
 const Navbar = () => {
   return (
-    <nav className="max-w-[1440px] mx-auto flex justify-between items-center p-4">
+    <section className="max-w-[1440px] mx-auto flex justify-between items-center p-4">
       <div className="flex items-center">
         <div className="cursor-pointer">
           <AiOutlineMenu size={30} />
@@ -27,7 +30,41 @@ const Navbar = () => {
         <BsFillCartFill className="mr-2" size={20} />
         Cart
       </button>
-    </nav>
+
+      {/* Mobile menu: */}
+      <div className="fixed top-0 left-0 h-screen w-full bg-black/80 z-10"></div>
+      <div className="fixed top-0 left-0 h-screen w-[300px] bg-white z-10 duration-300">
+        <AiOutlineClose size={30} className="absolute top-4 right-4 cursor-pointer" />
+        <h2 className="text-2xl p-4">
+          Best <span className="font-bold">Eats</span>
+        </h2>
+        <nav>
+          <ul className="flex flex-col p-4 text-gray-800">
+            <li className="text-xl py-4 flex items-center">
+              <TbTruckDelivery className="mr-4" size={25} /> Orders
+            </li>
+            <li className="text-xl py-4 flex items-center">
+              <MdFavorite className="mr-4" size={25} /> Favorites
+            </li>
+            <li className="text-xl py-4 flex items-center">
+              <FaWallet className="mr-4" size={25} /> Wallet
+            </li>
+            <li className="text-xl py-4 flex items-center">
+              <MdHelp className="mr-4" size={25} /> Help
+            </li>
+            <li className="text-xl py-4 flex items-center">
+              <AiFillTag className="mr-4" size={25} /> Promotions
+            </li>
+            <li className="text-xl py-4 flex items-center">
+              <BsFillSaveFill className="mr-4" size={25} /> Best Ones
+            </li>
+            <li className="text-xl py-4 flex items-center">
+              <FaUserFriends className="mr-4" size={25} /> Invite Friends
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
   );
 };
 
