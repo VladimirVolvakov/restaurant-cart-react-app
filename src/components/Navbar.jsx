@@ -1,12 +1,7 @@
 // Hook:
 import { useState } from "react";
 // Icons:
-import {
-  AiFillTag,
-  AiOutlineClose,
-  AiOutlineMenu,
-  AiOutlineSearch,
-} from "react-icons/ai";
+import { AiFillTag, AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
 import { FaUserFriends, FaWallet } from "react-icons/fa";
 import { MdFavorite, MdHelp } from "react-icons/md";
