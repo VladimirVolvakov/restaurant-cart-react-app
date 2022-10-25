@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Cards from "./components/Cards";
+import Menu from "./components/Menu";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navbar />
         <Hero />
         <Cards />
+        <Menu />
       </div>
     </div>
   );
