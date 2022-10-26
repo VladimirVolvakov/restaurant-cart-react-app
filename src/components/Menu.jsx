@@ -29,7 +29,7 @@ const Menu = () => {
         </div>
       </div>
 
-      <div>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
         { data.map(item => (
           <MenuItem item={item} />
         )) }
