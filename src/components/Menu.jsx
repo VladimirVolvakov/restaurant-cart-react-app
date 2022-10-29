@@ -19,6 +19,12 @@ const Menu = () => {
   const displayedSalads = () => setDisplayedFood(salads);
   const displayedChickens = () => setDisplayedFood(chickens);
 
+  const filterItemsByPrice = price => {
+    setDisplayedFood(data.filter(item => {
+      return item.price === price;
+    }));
+  };
+
   return (
     <section className="max-w-[1440px] mx-auto px-4 py-12">
       <h2 className="text-4xl font-bold text-orange-500 text-center">Top Rated Menu Items</h2>
@@ -36,17 +42,17 @@ const Menu = () => {
         <div className="mt-4">
           <p className="font-bold text-gray-700 ml-1">Filter Price</p>
           <div className="w-full max-w-[390px] flex">
-            <button className="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 m-1">$</button>
-            <button className="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 m-1">$$</button>
-            <button className="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 m-1">$$$</button>
-            <button className="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 m-1">$$$$</button>
+            <button className="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 m-1" onClick={() => filterItemsByPrice('$')}>$</button>
+            <button className="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 m-1" onClick={() => filterItemsByPrice('$$')}>$$</button>
+            <button className="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 m-1" onClick={() => filterItemsByPrice('$$$')}>$$$</button>
+            <button className="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 m-1" onClick={() => filterItemsByPrice('$$$$')}>$$$$</button>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
         { displayedFood.map(item => (
-          <MenuItem item={item} />
+          <MenuItem key={item.id} item={item} />
         )) }
       </div>
     </section>
