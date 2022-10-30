@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Cards from "./components/Cards";
 import Menu from "./components/Menu";
+import Category from "./components/Category";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Hero />
         <Cards />
         <Menu />
+        <Category />
       </div>
     </div>
   );
